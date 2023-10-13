@@ -10,10 +10,7 @@
             <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
                 <div class="max-w-xl">
 
-                    <div class="text-gray-900 dark:text-gray-100">
-                      //  New Todo Form
-                    </div>
-                    {{-- <livewire:todos.new-todo-form />--}}
+                     <livewire:todos.new-todo-form />
 
                 </div>
             </div>
@@ -21,10 +18,7 @@
             <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
                 <div class="max-w-xl">
 
-                    <div class="text-gray-900 dark:text-gray-100">
-                        //  Todo List
-                    </div>
-                    {{-- <livewire:todos.todo-list />--}}
+                     <livewire:todos.todo-list />
 
                 </div>
             </div>
