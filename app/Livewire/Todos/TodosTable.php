@@ -4,10 +4,10 @@ namespace App\Livewire\Todos;
 
 use Livewire\Component;
 
-class TodoList extends Component
+class TodosTable extends Component
 {
     public function render()
     {
-        return view('livewire.todos.todo-list');
+        return view('livewire.todos.todos-table');
     }
 }
