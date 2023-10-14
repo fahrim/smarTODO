@@ -8,6 +8,7 @@
         </div>
 
         <div class="flex items-center justify-end mt-4">
+            <span wire:loading>Loading...</span>
             <x-primary-button class="ml-4">
                 {{ __('Add Todo') }}
             </x-primary-button>
