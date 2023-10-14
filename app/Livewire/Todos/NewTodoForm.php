@@ -21,6 +21,8 @@ class NewTodoForm extends Component
         ]);
 
         $this->reset('description');
+
+        $this->dispatch('todoAdded');
     }
 
     public function updated($field)

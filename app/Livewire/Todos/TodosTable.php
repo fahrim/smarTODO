@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Todos;
 
+use Livewire\Attributes\On;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -26,17 +27,24 @@ class TodosTable extends Component
         $this->sortField = $field;
     }
 
-
-    public function render()
+    #[On('todoAdded')]
+    public function updateTodosList()
     {
-        $todos = auth()->user()->todos()
+        $this->reset('this.todos');
+    }
+
+    public function getTodosProperty()
+    {
+        return auth()->user()->todos()
             ->where('description', 'like', '%'.$this->search.'%')
             ->orderBy($this->sortField, $this->sortDirection)
             ->paginate($this->perPage);
-
-        return view('livewire.todos.todos-table', [
-            'todos' => $todos,
-        ]);
     }
 
+    public function render()
+    {
+        return view('livewire.todos.todos-table', [
+            'todos' => $this->getTodosProperty(),
+        ]);
+    }
 }
