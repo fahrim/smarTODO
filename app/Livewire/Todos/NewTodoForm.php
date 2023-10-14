@@ -23,6 +23,13 @@ class NewTodoForm extends Component
         $this->reset('description');
     }
 
+    public function updated($field)
+    {
+        $this->validateOnly($field, [
+            'description' => 'required|min:6',
+        ]);
+    }
+
     public function render()
     {
         return view('livewire.todos.new-todo-form');
