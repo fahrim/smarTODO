@@ -1,4 +1,4 @@
-<div class="text-gray-900 dark:text-gray-100 space-y-6">
+<div class="text-gray-900 dark:text-gray-100 space-y-6" x-on:click="document.title = @js($pageTitle.' - '.config('app.name'))">
     <div class="flex justify-between">
         <button wire:click="sortBy('description')">Sort By Description</button>
         <button wire:click="sortBy('created_at')">Sort By Created at</button>

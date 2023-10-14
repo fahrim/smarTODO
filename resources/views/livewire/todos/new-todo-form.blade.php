@@ -1,4 +1,4 @@
-<div class="text-gray-900 dark:text-gray-100">
+<div class="text-gray-900 dark:text-gray-100" x-on:click="document.title = @js($pageTitle.' - '.config('app.name'))">
     <form wire:submit="addTodo">
         <!-- Description -->
         <div>

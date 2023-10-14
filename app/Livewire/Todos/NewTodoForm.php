@@ -7,6 +7,7 @@ use Livewire\Component;
 class NewTodoForm extends Component
 {
     public string $description;
+    public $pageTitle = 'New Todo';
 
     public function addTodo()
     {

@@ -13,6 +13,7 @@ class TodosTable extends Component
     public $sortField = 'created_at';
     public $sortDirection = 'desc';
     public $perPage = 4;
+    public $pageTitle = 'My Todos Table';
 
     public function sortBy($field)
     {
