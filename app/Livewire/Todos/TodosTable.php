@@ -45,7 +45,7 @@ class TodosTable extends Component
 
     public function delete(Todo $todo)
     {
-        //  $this->authorize('delete', $todo);
+          $this->authorize('delete', $todo);
 
         $todo->delete();
     }
