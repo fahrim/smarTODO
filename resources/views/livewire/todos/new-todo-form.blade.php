@@ -8,9 +8,9 @@
         </div>
 
         <div class="flex items-center justify-end mt-4">
-            <span wire:loading>Loading...</span>
-            <x-primary-button class="ml-4">
-                {{ __('Add Todo') }}
+            <x-primary-button class="ml-4" wire:loading.class="opacity-75" wire:loading.attr="disabled">
+                <div wire:loading.remove>{{ __('Add Todo') }}</div>
+                <span wire:loading>Loading...</span>
             </x-primary-button>
         </div>
     </form>
