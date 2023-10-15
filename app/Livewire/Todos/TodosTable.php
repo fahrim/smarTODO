@@ -13,7 +13,7 @@ class TodosTable extends Component
     public $search = '';
     public $sortField = 'created_at';
     public $sortDirection = 'desc';
-    public $perPage = 4;
+    public $perPage = 10;
     public $pageTitle = 'My Todos Table';
 
     public function sortBy($field)
@@ -38,6 +38,7 @@ class TodosTable extends Component
         return auth()->user()->todos()
             ->where('description', 'like', '%'.$this->search.'%')
             ->orderBy($this->sortField, $this->sortDirection)
+            // ->simplePaginate($this->perPage);
             ->paginate($this->perPage);
     }
 
