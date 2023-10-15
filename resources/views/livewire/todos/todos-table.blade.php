@@ -7,7 +7,7 @@
     @foreach($todos as $todo)
         <div class="flex justify-between border-b pb-3">
             <li class="w-3/4">{{ $todo->description }} <span class="flex items-center justify-end">{{ $todo->created_at->diffForHumans() }}</span></li>
-            <button class="border p-2" wire:click="delete">DELETE</button>
+            <button class="border p-2" wire:click="delete({{ $todo->id }})">DELETE</button>
         </div>
     @endforeach
 

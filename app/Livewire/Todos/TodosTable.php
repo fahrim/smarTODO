@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Todos;
 
+use App\Models\Todo;
 use Livewire\Attributes\On;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -40,6 +41,13 @@ class TodosTable extends Component
             ->orderBy($this->sortField, $this->sortDirection)
             // ->simplePaginate($this->perPage);
             ->paginate($this->perPage);
+    }
+
+    public function delete(Todo $todo)
+    {
+        //  $this->authorize('delete', $todo);
+
+        $todo->delete();
     }
 
     public function render()
