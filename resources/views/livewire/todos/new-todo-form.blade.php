@@ -10,7 +10,7 @@
         <div class="flex items-center justify-end mt-4">
             <x-primary-button class="ml-4" wire:loading.class="opacity-75" wire:loading.attr="disabled">
                 <div wire:loading.remove>{{ __('Add Todo') }}</div>
-                <span wire:loading>Loading...</span>
+                <span wire:loading>{{ __('Loading...') }}</span>
             </x-primary-button>
         </div>
     </form>
