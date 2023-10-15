@@ -2,37 +2,35 @@
 
 namespace App\Livewire\Todos;
 
+use Illuminate\View\View;
+use Livewire\Attributes\Rule;
 use Livewire\Component;
 
 class NewTodoForm extends Component
 {
-    public string $description;
     public $pageTitle = 'New Todo';
 
-    public function addTodo()
-    {
-        $this->validate([
-            'description' => 'required|min:6',
-        ]);
+    #[Rule('required|string|min:6|max:255')]
+    public string $description = '';
 
-        $todo = auth()->user()->todos()->create([
-            'description' => $this->description,
-            'completed' => false,
-        ]);
+
+    public function addTodo(): void
+    {
+        $validated = $this->validate();
+
+        auth()->user()->todos()->create($validated);
 
         $this->reset('description');
 
         $this->dispatch('todoAdded');
     }
 
-    public function updated($field)
+    public function updated($field): void
     {
-        $this->validateOnly($field, [
-            'description' => 'required|min:6',
-        ]);
+        $this->validateOnly($field);
     }
 
-    public function render()
+    public function render(): View
     {
         return view('livewire.todos.new-todo-form');
     }
