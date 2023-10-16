@@ -15,11 +15,17 @@
         </div>
     </div>
 
-    <div class="space-y-6">
+
+    <div class="space-y-3">
         @foreach($todos as $todo)
-            <div class="flex justify-between items-center dark:bg-gray-700 rounded-lg p-4">
-                <div class="w-3/4">{{ $todo->description }} <span class="flex items-center justify-end">{{ $todo->created_at->diffForHumans() }}</span></div>
-                <x-danger-button wire:click="delete({{ $todo->id }})">Delete</x-danger-button>
+            <div class="flex justify-between items-center border border-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-lg">
+                <div class="w-full p-2">
+                    {{ $todo->description }}
+                    <span class="flex items-center justify-end text-gray-400 text-xs">{{ $todo->created_at->diffForHumans() }}</span>
+                </div>
+
+                <x-danger-button wire:click="delete({{ $todo->id }})" class="m-4">Delete</x-danger-button>
+
             </div>
         @endforeach
     </div>
