@@ -1,6 +1,7 @@
 <p align="center"><a href="https://github.com/fahrim/smarTODO" target="_blank"><img src="https://raw.githubusercontent.com/fahrim/smarTODO/02b0002e9a615ef967bfa79bbd646a20e0af6e5e/public/brands/smartodo-logo.svg" width="400" alt="smarTODO Logo"></a></p>
 
-
 ## About smarTODO
 
 smarTODO is a web application that helps you to manage your tasks. It is built with TALL.
+
+<p align="center"><a href="https://github.com/fahrim/smarTODO" target="_blank"><img src="https://raw.githubusercontent.com/fahrim/smarTODO/ff4bba9201ceeeed86d0425d121e06286d938f2d/public/brands/laptop-screen-shot.png" width="720" alt="smarTODO Logo"></a></p>
