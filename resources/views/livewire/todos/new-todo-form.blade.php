@@ -3,7 +3,7 @@
         <!-- Description -->
         <div>
             <x-input-label for="description" :value="__('TODO Description')" />
-            <x-text-input wire:model.live.blur="description" wire:keydown.enter="addTodo + $refresh" id="description" class="block mt-1 w-full" type="text" name="description" required autofocus autocomplete="description" />
+            <x-text-input wire:model.live.blur="description" id="description" class="block mt-1 w-full" type="text" name="description" required autofocus autocomplete="description" />
             <x-input-error :messages="$errors->get('description')" class="mt-2" />
         </div>
 
