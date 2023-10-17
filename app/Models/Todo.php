@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -20,6 +21,7 @@ class Todo extends Model
         'title',
         'description',
         'completed',
+        'completed_at',
     ];
 
     /**
@@ -34,5 +36,23 @@ class Todo extends Model
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function scopeCompleted(Builder $query): Builder
+    {
+        return $query->whereCompleted(true);
+    }
+
+    public function scopeIncomplete(Builder $query): Builder
+    {
+        return $query->whereCompleted(false);
+    }
+
+    public function updateCompletedToggle(): void
+    {
+        $this->update([
+            'completed' => !$this->completed,
+            'completed_at' => $this->completed ? null : now(),
+        ]);
     }
 }

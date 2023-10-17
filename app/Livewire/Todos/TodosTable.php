@@ -68,9 +68,16 @@ class TodosTable extends Component
 
     public function delete(Todo $todo): void
     {
-          $this->authorize('delete', $todo);
+        $this->authorize('delete', $todo);
 
         $todo->delete();
+    }
+
+    public function completed(Todo $todo): void
+    {
+        $this->authorize('update', $todo);
+
+        $todo->updateCompletedToggle();
     }
 
     public function render(): View
