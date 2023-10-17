@@ -17,6 +17,9 @@
 
 
     <div class="space-y-3">
+        @if($todos->isEmpty())
+            <div class="text-center text-gray-400 dark:text-gray-600 text-sm">{{ __('No todos found...') }}</div>
+        @endif
         @foreach($todos as $todo)
             <div class="flex justify-between items-center border border-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-lg">
                 <div class="w-full p-2">
