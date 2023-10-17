@@ -8,6 +8,10 @@
         </div>
 
         <div class="flex items-center justify-end mt-4">
+            <x-action-message on="todoAdded">
+                {{ __('Saved.') }}
+            </x-action-message>
+
             <x-primary-button class="ml-4" wire:loading.class="opacity-75" wire:loading.attr="disabled">
                 <div wire:loading.remove>{{ __('Add Todo') }}</div>
                 <span wire:loading>{{ __('Loading...') }}</span>
