@@ -21,19 +21,19 @@
             <div class="text-center text-gray-400 dark:text-gray-600 text-sm">{{ __('No todos found...') }}</div>
         @endif
         @foreach($todos as $todo)
-            <div class="flex justify-between items-center border border-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-lg">
+            <div class="flex justify-between items-center border border-gray-500 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-lg" x-data="{ completed: false }" :class="{ 'border-none' : completed }">
                 <label for="completed" class="inline-flex items-center m-4">
-                    <input wire:model="completed" id="completed" type="checkbox" class="rounded dark:bg-gray-900 border-gray-300 dark:border-gray-700 text-indigo-600 shadow-sm focus:ring-indigo-500 dark:focus:ring-indigo-600 dark:focus:ring-offset-gray-800" name="remember">
+                    <input wire:model="completed" @click="completed = !completed" id="completed" type="checkbox" class="rounded-lg dark:bg-gray-900 border-gray-300 dark:border-gray-700 text-indigo-600 shadow-sm focus:ring-indigo-500 dark:focus:ring-indigo-600 dark:focus:ring-offset-gray-800 cursor-pointer p-2.5" name="remember">
                 </label>
                 <div class="w-full p-2">
-                    {{ $todo->description }}
-                    <span class="flex items-center justify-end text-gray-400 text-xs">{{ $todo->created_at->diffForHumans() }}</span>
+                    <p :class="{ 'line-through text-gray-400' : completed }">{{ $todo->description }}</p>
+                    <span class="flex items-center justify-end text-gray-500 text-xs">{{ $todo->created_at->diffForHumans() }}</span>
                 </div>
 
                 @if ($todo->user->is(auth()->user()))
                     <x-dropdown>
                         <x-slot name="trigger">
-                            <button class="mr-4">
+                            <button class="mr-4 p-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
                                     <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
                                 </svg>
