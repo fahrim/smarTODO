@@ -1,7 +1,8 @@
-<p align="center"><a href="https://github.com/fahrim/smarTODO" target="_blank"><img src="https://raw.githubusercontent.com/fahrim/smarTODO/02b0002e9a615ef967bfa79bbd646a20e0af6e5e/public/brands/smartodo-logo.svg" width="400" alt="smarTODO Logo"></a></p>
+<p align="center"><a href="https://github.com/fahrim/smarTODO" target="_blank"><img src="https://raw.githubusercontent.com/fahrim/smarTODO/0ed71043530c8df6cb6962cdf94ec091580ce3d2/public/brands/smartodo-logo.svg" width="400" alt="smarTODO Logo"></a></p>
 
 ## About smarTODO
 
 smarTODO is a web application that helps you to manage your tasks. It is built with TALL.
 
-<p align="center"><a href="https://github.com/fahrim/smarTODO" target="_blank"><img src="https://raw.githubusercontent.com/fahrim/smarTODO/ff4bba9201ceeeed86d0425d121e06286d938f2d/public/brands/laptop-screen-shot.png" width="720" alt="smarTODO Logo"></a></p>
+<p align="center"><a href="https://github.com/fahrim/smarTODO" target="_blank"><img src="https://github.com/fahrim/smarTODO/blob/master/public/brands/laptop-screen-shot-start-v0.5.png?raw=true" width="720" alt="smarTODO Logo"></a></p>
+<p align="center"><a href="https://github.com/fahrim/smarTODO" target="_blank"><img src="https://github.com/fahrim/smarTODO/blob/master/public/brands/laptop-screen-shot-end-v0.5.png?raw=true" width="720" alt="smarTODO Logo"></a></p>
