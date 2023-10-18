@@ -3,7 +3,11 @@
     <x-input-checkbox wire:click="completed({{ $todo->id }}); completed = !completed " :checked="$todo->completed" id="todo-{{ $key }}" class="p-2.5 m-4" type="checkbox"/>
 
     <div class="w-full p-2">
-        <p :class="{ 'line-through text-gray-400' : completed }">{{ $todo->description }}</p>
+        @if ($todo->is($editing))
+            <livewire:todos.edit-todo :todo="$todo" :wire:key="$todo->id" />
+        @else
+            <p :class="{ 'line-through text-gray-400' : completed }">{{ $todo->description }}</p>
+        @endif
         <span class="flex items-center justify-end text-gray-500 text-xs">{{ $todo->created_at->diffForHumans() }}</span>
     </div>
 

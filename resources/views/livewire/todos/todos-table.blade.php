@@ -21,7 +21,7 @@
             <div class="text-center text-gray-400 dark:text-gray-600 text-sm">{{ __('No todos found...') }}</div>
         @endif
         @foreach($todos as $todo)
-            <x-todos.todo-card :todo="$todo" :key="$todo->id" />
+            <x-todos.todo-card :todo="$todo" :key="$todo->id" :editing="$editing" />
         @endforeach
     </div>
 

@@ -24,6 +24,8 @@ class TodosTable extends Component
 
     public $perPage = 10;
 
+    public ?Todo $editing = null;
+
     protected function queryString()
     {
         return [
@@ -34,8 +36,10 @@ class TodosTable extends Component
     }
 
     #[On('todoAdded')]
+    #[On('todoUpdated')]
     public function updateTodosList(): void
     {
+        $this->reset('editing');
         $this->reset('this.todos');
     }
 
@@ -78,6 +82,17 @@ class TodosTable extends Component
         $this->authorize('update', $todo);
 
         $todo->updateCompletedToggle();
+    }
+
+    public function edit(Todo $todo): void
+    {
+        $this->editing = $todo;
+    }
+
+    #[On('todoEditCancelled')]
+    public function cancelEdit(): void
+    {
+        $this->reset('editing');
     }
 
     public function render(): View
