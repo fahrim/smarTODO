@@ -26,7 +26,7 @@ class TodosTable extends Component
 
     public ?Todo $editing = null;
 
-    protected function queryString()
+    protected function queryString(): array
     {
         return [
             'search' => ['as' => 'q'],
@@ -46,9 +46,8 @@ class TodosTable extends Component
     public function getTodosProperty(): mixed
     {
         return auth()->user()->todos()
-            ->where('description', 'like', '%'.$this->search.'%')
+            ->search(['user.name', 'title', 'description'], $this->search)
             ->orderBy($this->sortField, $this->sortDirection)
-            // ->simplePaginate($this->perPage);
             ->paginate($this->perPage);
     }
 
