@@ -7,8 +7,8 @@
             <livewire:todos.edit-todo :todo="$todo" :wire:key="$todo->id" />
         @else
             <p :class="{ 'line-through text-gray-400' : completed }">{{ $todo->description }}</p>
+            <span class="flex items-center justify-end text-gray-500 text-xs">{{ $todo->created_at->diffForHumans() }}</span>
         @endif
-        <span class="flex items-center justify-end text-gray-500 text-xs">{{ $todo->created_at->diffForHumans() }}</span>
     </div>
 
     @if ($todo->user->is(auth()->user()))
