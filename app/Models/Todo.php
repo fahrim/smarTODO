@@ -22,6 +22,7 @@ class Todo extends Model
         'description',
         'completed',
         'completed_at',
+        'due_date',
     ];
 
     /**
@@ -31,6 +32,8 @@ class Todo extends Model
      */
     protected $casts = [
         'completed' => 'boolean',
+        'completed_at' => 'datetime',
+        'due_date' => 'datetime',
     ];
 
     public function user(): BelongsTo
