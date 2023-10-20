@@ -33,7 +33,7 @@
 
                 <div>
                     <x-input-label for="description" value="{{ __('Description') }}" />
-                    <x-textarea-input
+                    <x-textarea-input id="description" name="description"
                         wire:model.live.blur="description"
                         class="mt-1 block w-full"
                     ></x-textarea-input>
@@ -55,10 +55,10 @@
 
             </div>
 
-            <div class="flex justify-between mt-6">
+            <div class="flex items-center justify-between mt-6">
                 <div>
                     @if($todo->completed_at)
-                        <x-input-label for="completed_at" value="{{ __('Completed at') }} {{ $todo->completed_at->format('j M Y, g:i a') }}" />
+                        <span class="border border-gray-600 rounded-full dark:bg-gray-900 p-1.5 font-medium text-sm text-gray-700 dark:text-gray-300">{{ __('Completed at') }} {{ $todo->completed_at->format('j M Y, g:i a') }}</span>
                     @endif
                 </div>
                 <div>
