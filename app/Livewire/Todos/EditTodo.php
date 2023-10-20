@@ -11,12 +11,28 @@ class EditTodo extends Component
 {
     public Todo $todo;
 
+    #[Rule('string|max:255')]
+    public ?string $title = '';
+
     #[Rule('required|string|min:6|max:255')]
     public string $description = '';
 
+    #[Rule('nullable|date:Y-m-d')]
+    public ?string $due_date = null;
+
+    #[Rule('boolean')]
+    public bool $completed = false;
+
+    #[Rule('nullable|date')]
+    public $completed_at = null;
+
     public function mount(): void
     {
+        $this->title = $this->todo->title;
         $this->description = $this->todo->description;
+        $this->due_date = $this->todo->due_date?->format('Y-m-d');
+        $this->completed = $this->todo->completed;
+        $this->completed_at = $this->todo->completed_at;
     }
 
     public function updateTodo(): void
@@ -24,6 +40,8 @@ class EditTodo extends Component
         $this->authorize('update', $this->todo);
 
         $validated = $this->validate();
+
+        $validated['completed_at'] = $validated['completed'] ? now() : null;
 
         $this->todo->update($validated);
 
