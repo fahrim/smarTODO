@@ -15,7 +15,7 @@ class TodosTable extends Component
 
     public $pageTitle = 'My Todos Table';
 
-    #[Url(as:'q', history: true)]
+    #[Url(as: 'q', history: true)]
     public $search = '';
 
     public $sortField = 'created_at';

@@ -2,8 +2,8 @@
 
 namespace App\Livewire\Todos;
 
-use Illuminate\View\View;
 use App\Models\Todo;
+use Illuminate\View\View;
 use Livewire\Attributes\Rule;
 use Livewire\Component;
 

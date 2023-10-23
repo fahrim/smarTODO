@@ -13,7 +13,6 @@ class NewTodoForm extends Component
     #[Rule('required|string|min:6|max:255')]
     public string $description = '';
 
-
     public function addTodo(): void
     {
         $validated = $this->validate();
