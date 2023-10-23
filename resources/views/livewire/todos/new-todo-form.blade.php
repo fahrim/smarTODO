@@ -7,15 +7,22 @@
             <x-input-error :messages="$errors->get('description')" class="mt-2" />
         </div>
 
-        <div class="flex items-center justify-end mt-4">
-            <x-action-message on="todoAdded">
-                {{ __('Saved.') }}
-            </x-action-message>
 
-            <x-primary-button class="ml-4" wire:loading.class="opacity-75" wire:loading.attr="disabled">
-                <div wire:loading.remove>{{ __('Add Todo') }}</div>
-                <span wire:loading>{{ __('Loading...') }}</span>
-            </x-primary-button>
+        <div class="flex items-center justify-between mt-4">
+            <div>
+                {{-- // TODO: Add a button to open the advanced add modal --}}
+            </div>
+            <div>
+                <x-action-message on="todoAdded">
+                    {{ __('Saved.') }}
+                </x-action-message>
+
+                <x-primary-button class="ml-4" wire:loading.class="opacity-75" wire:loading.attr="disabled">
+                    <div wire:loading.remove>{{ __('Add Todo') }}</div>
+                    <span wire:loading>{{ __('Loading...') }}</span>
+                </x-primary-button>
+            </div>
+
         </div>
     </form>
 </div>
