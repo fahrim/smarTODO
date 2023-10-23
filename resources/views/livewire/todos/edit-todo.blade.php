@@ -58,7 +58,7 @@
             <div class="flex items-center justify-between mt-6">
                 <div>
                     @if($todo->completed_at)
-                        <span class="border border-gray-600 rounded-full dark:bg-gray-900 p-1.5 font-medium text-sm text-gray-700 dark:text-gray-300">{{ __('Completed at') }} {{ $todo->completed_at->format('j M Y, g:i a') }}</span>
+                        <x-elements.badge color="indigo">{{ __('Completed at') }} {{ $todo->completed_at->format('j M Y, g:i a') }}</x-elements.badge>
                     @endif
                 </div>
                 <div>
