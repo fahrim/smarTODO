@@ -30,7 +30,7 @@ class TodosTable extends Component
     {
         return [
             'search' => ['as' => 'q'],
-            'sortBy' => ['as' => 'sort'],
+            'sortField' => ['as' => 'sortBy'],
             'sortDirection' => ['as' => 'direction'],
         ];
     }
@@ -45,6 +45,15 @@ class TodosTable extends Component
 
     public function getTodosProperty(): mixed
     {
+        // add validation to sortField and sortDirection
+        if (! in_array($this->sortField, ['created_at','title','description','completed_at'])) {
+            $this->sortField = 'created_at';
+        }
+
+        if (! in_array($this->sortDirection, ['asc','desc'])) {
+            $this->sortDirection = 'desc';
+        }
+
         return auth()->user()->todos()
             ->search(['user.name', 'title', 'description'], $this->search)
             ->orderBy($this->sortField, $this->sortDirection)
@@ -56,6 +65,11 @@ class TodosTable extends Component
         $this->reset('search');
         $this->reset('sortField');
         $this->reset('sortDirection');
+    }
+
+    public function sortDirectionToggle(): void
+    {
+        $this->sortDirection = $this->sortDirection === 'asc' ? 'desc' : 'asc';
     }
 
     public function sortBy($field): void
