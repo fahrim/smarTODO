@@ -9,7 +9,7 @@ export default {
         './resources/views/**/*.blade.php',
         './node_modules/flowbite/**/*.js',
     ],
-
+    darkMode: 'media',
     theme: {
         extend: {
             fontFamily: {
