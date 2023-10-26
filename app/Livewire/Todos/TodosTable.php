@@ -46,11 +46,11 @@ class TodosTable extends Component
     public function getTodosProperty(): mixed
     {
         // add validation to sortField and sortDirection
-        if (! in_array($this->sortField, ['created_at','title','description','completed_at'])) {
+        if (! in_array($this->sortField, ['created_at', 'title', 'description', 'completed_at'])) {
             $this->sortField = 'created_at';
         }
 
-        if (! in_array($this->sortDirection, ['asc','desc'])) {
+        if (! in_array($this->sortDirection, ['asc', 'desc'])) {
             $this->sortDirection = 'desc';
         }
 
