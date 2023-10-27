@@ -9,9 +9,9 @@
             <x-input-error :messages="$errors->get('search')" class="mt-2" />
         </div>
         <div class="inline-flex justify-end space-x-2 w-full sm:w-2/4">
-            <x-secondary-button wire:click="sortDirectionToggle">
-                <div class="mr-2">
-                    @if($sortDirection === 'asc') <span class="text-gray-400 dark:text-gray-600">asc</span> @else <span class="text-gray-400 dark:text-gray-600">desc</span> @endif
+            <x-secondary-button wire:click="sortDirectionToggle" class="px-2">
+                <div class="mr-1">
+                    @if($sortDirection === 'asc')<x-icon-wireui name="chevron-down" class="w-5 h-5 text-gray-400 dark:text-gray-600"></x-icon-wireui> @else <x-icon-wireui name="chevron-up" class="w-5 h-5 text-gray-400 dark:text-gray-600"></x-icon-wireui> @endif
                 </div>
                 {{ __('Sort By') }}
             </x-secondary-button>
