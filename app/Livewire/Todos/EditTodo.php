@@ -17,7 +17,7 @@ class EditTodo extends Component
     #[Rule('required|string|min:6|max:255')]
     public string $description = '';
 
-    #[Rule('nullable|date:Y-m-d')]
+    #[Rule('nullable|date:Y-m-d H:i:s')]
     public ?string $due_date = null;
 
     #[Rule('boolean')]

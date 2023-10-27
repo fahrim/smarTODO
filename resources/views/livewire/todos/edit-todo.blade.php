@@ -47,10 +47,12 @@
                         <x-input-error :messages="$errors->get('completed')" class="mt-2" />
                     </div>
                     <div class="flex items-center space-x-2 w-1/2">
-                        <x-input-label for="due_date" class="whitespace-nowrap" value="{{ __('Due date') }}" />
-                        <input type="date" wire:model="due_date" name="due_date" id="due_date" aria-label="Due time" class="mt-1 block w-full rounded-md bg-gray-100 dark:bg-gray-700 border-transparent focus:border-gray-500 focus:bg-white dark:focus:bg-gray-600 focus:ring-0">
+                        <x-datetime-picker-wireui
+                            label="{{ __('Due date') }}"
+                            placeholder="{{ __('Due date') }}"
+                            wire:model.defer="due_date"
+                        />
                     </div>
-
                 </div>
 
             </div>
